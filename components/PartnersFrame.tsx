@@ -16,7 +16,7 @@ const PartnersFrame: React.FC = () => {
             { name: "TATA MUTUAL", domain: "tatamutualfund.com" },
             { name: "LIC MUTUAL", domain: "licmf.com" },
             { name: "KOTAK", domain: "kotak.com" },
-            { name: "BANDHAN", domain: "bandhanbank.com" }
+            { name: "BANDHAN", domain: "bandhanmutual.com" }
           ]
         },
         {
@@ -26,6 +26,7 @@ const PartnersFrame: React.FC = () => {
             { name: "CLUB MILLIONAIRE", domain: "clubmillionaire.in" },
             { name: "SVAN", domain: "svaninvestments.com" },
             { name: "UNICORN", domain: "unicornivc.com" },
+            { name: "TRUST", domain: "trustmf.com" },
             { name: "BANYAN TREE", domain: "banyantreeadvisors.com" }
           ]
         },
@@ -77,7 +78,8 @@ const PartnersFrame: React.FC = () => {
             { name: "WESTLIFE", domain: "westlife.co.in" },
             { name: "MCDONALDS", domain: "mcdonalds.com" },
             { name: "CAPITAL FOODS", domain: "capitalfoods.co.in" },
-            { name: "CHING'S", domain: "chingssecret.com" }
+            { name: "CHING'S", domain: "chingssecret.com" },
+            { name: "BONG STREET", domain: "bongstreet.in" }
           ]
         }
       ]
@@ -117,16 +119,13 @@ const PartnersFrame: React.FC = () => {
                   <div className="flex-1 relative overflow-hidden bg-white border border-zinc-100 flex items-center group">
                     <div className="flex animate-marquee py-3 gap-6">
                       {[...row.logos, ...row.logos, ...row.logos].map((logo, lIdx) => (
-                        <div key={lIdx} className="min-w-[180px] md:min-w-[220px] h-20 border border-zinc-50 flex items-center justify-between px-6 bg-white shadow-sm hover:border-eminence-red transition-all cursor-pointer grayscale hover:grayscale-0 group/card">
-                           <img 
-                              src={`https://logo.clearbit.com/${logo.domain}?size=120`} 
-                              alt={logo.name}
-                              className="h-10 w-10 object-contain"
-                              onError={(e) => { (e.target as HTMLImageElement).src = 'https://via.placeholder.com/40?text=' + logo.name[0]; }}
-                           />
-                           <span className="text-zinc-900 font-black text-[10px] uppercase tracking-tighter text-right leading-tight max-w-[100px] border-l border-zinc-100 pl-3">
-                             {logo.name}
-                           </span>
+                        <div key={lIdx} className="min-w-[120px] md:min-w-[160px] h-24 border border-zinc-50 flex items-center justify-center px-4 bg-white shadow-sm hover:border-eminence-red transition-all cursor-pointer group/card">
+                          <img
+                            src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=128`}
+                            alt={logo.name}
+                            className="h-16 w-auto object-contain"
+                            onError={(e) => { (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=' + logo.name + '&background=f4f4f5&color=18181b'; }}
+                          />
                         </div>
                       ))}
                     </div>
@@ -140,15 +139,15 @@ const PartnersFrame: React.FC = () => {
 
       {/* Footer Bar */}
       <div className="h-14 bg-eminence-red-light border-t border-zinc-100 flex items-center justify-center">
-         <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-eminence-red animate-pulse"></div>
-                <span className="text-[10px] font-black text-eminence-red tracking-[0.3em] uppercase">ADVISORY_ACTIVE</span>
-            </div>
-            <span className="text-[10px] font-bold text-zinc-400 tracking-[0.2em] uppercase">
-              100% CONSISTENT BRANDING // GLOBAL ARCHITECTURE
-            </span>
-         </div>
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-eminence-red animate-pulse"></div>
+            <span className="text-[10px] font-black text-eminence-red tracking-[0.3em] uppercase">ADVISORY_ACTIVE</span>
+          </div>
+          <span className="text-[10px] font-bold text-zinc-400 tracking-[0.2em] uppercase">
+            100% CONSISTENT BRANDING // GLOBAL ARCHITECTURE
+          </span>
+        </div>
       </div>
     </div>
   );
